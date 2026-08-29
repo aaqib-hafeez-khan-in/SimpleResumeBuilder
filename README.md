@@ -4,18 +4,6 @@ A feature-rich, browser-based resume builder with drag-and-drop layout construct
 
 Live at: https://aaqibhafeezkhan.github.io/SimpleResumeBuilder/
 
----
-
-## Suggested Repository Description
-
-> A drag-and-drop resume builder with multiple templates, live inline editing, skill tag management, photo upload, color themes, font controls, and PDF export — built with pure HTML, CSS, and JavaScript.
-
-## Suggested Topics
-
-`resume-builder` `drag-and-drop` `vanilla-javascript` `pdf-export` `frontend` `github-pages` `html5` `css3` `no-framework` `open-source`
-
----
-
 ## Features
 
 **Layout and Templates**
