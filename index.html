@@ -11,105 +11,70 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body data-color="slate">
+    <noscript><div role="alert">Resume Builder requires JavaScript to create, save, and export resumes. Please enable JavaScript and reload the page.</div></noscript>
     <div class="app-shell">
 
         <header class="topbar">
             <div class="topbar-brand">Resume<strong>Builder</strong></div>
             <div class="topbar-center">
-                <div class="strength-wrap">
+                <div class="strength-wrap" aria-label="Resume strength">
                     <span class="strength-label">Resume Strength</span>
-                    <div class="strength-track">
+                    <div class="strength-track" aria-hidden="true">
                         <div class="strength-bar" id="strength-bar"></div>
                     </div>
-                    <span class="strength-pct" id="strength-pct">0%</span>
+                    <span class="strength-pct" id="strength-pct" aria-live="polite">0%</span>
                 </div>
             </div>
             <div class="topbar-end">
-                <span class="saved-pill" id="saved-pill">Saved</span>
-                <button class="tbtn tbtn-ghost" id="btn-clear">Clear All</button>
-                <button class="tbtn tbtn-primary" id="btn-pdf">Export PDF</button>
+                <span class="saved-pill" id="saved-pill" role="status" aria-live="polite">Saved</span>
+                <button class="tbtn tbtn-ghost" id="btn-clear" type="button">Clear All</button>
+                <button class="tbtn tbtn-primary" id="btn-pdf" type="button">Export PDF</button>
             </div>
         </header>
 
         <div class="workspace">
 
-            <aside class="sidebar">
+            <aside class="sidebar" aria-label="Resume controls">
                 <div class="sidebar-inner">
 
                     <div class="sb-group">
                         <div class="sb-group-title">Templates</div>
                         <div class="tmpl-grid">
-                            <button class="tmpl-card active" data-template="modern">
-                                <div class="tc-thumb tc-modern"></div>
-                                <span>Modern</span>
-                            </button>
-                            <button class="tmpl-card" data-template="classic">
-                                <div class="tc-thumb tc-classic"></div>
-                                <span>Classic</span>
-                            </button>
-                            <button class="tmpl-card" data-template="minimal">
-                                <div class="tc-thumb tc-minimal"></div>
-                                <span>Minimal</span>
-                            </button>
-                            <button class="tmpl-card" data-template="bold">
-                                <div class="tc-thumb tc-bold"></div>
-                                <span>Bold</span>
-                            </button>
+                            <button class="tmpl-card active" data-template="modern" type="button" aria-label="Select Modern template" aria-pressed="true"><div class="tc-thumb tc-modern"></div><span>Modern</span></button>
+                            <button class="tmpl-card" data-template="classic" type="button" aria-label="Select Classic template" aria-pressed="false"><div class="tc-thumb tc-classic"></div><span>Classic</span></button>
+                            <button class="tmpl-card" data-template="minimal" type="button" aria-label="Select Minimal template" aria-pressed="false"><div class="tc-thumb tc-minimal"></div><span>Minimal</span></button>
+                            <button class="tmpl-card" data-template="bold" type="button" aria-label="Select Bold template" aria-pressed="false"><div class="tc-thumb tc-bold"></div><span>Bold</span></button>
                         </div>
                     </div>
 
                     <div class="sb-group">
                         <div class="sb-group-title">Add Sections</div>
-                        <div class="section-palette" id="section-palette">
-                            <div class="palette-row" draggable="true" data-type="header">
-                                <span class="pr-badge">H</span>
-                                <div class="pr-info"><b>Header</b><small>Name, title &amp; contact</small></div>
-                            </div>
-                            <div class="palette-row" draggable="true" data-type="summary">
-                                <span class="pr-badge">S</span>
-                                <div class="pr-info"><b>Summary</b><small>Professional overview</small></div>
-                            </div>
-                            <div class="palette-row" draggable="true" data-type="experience">
-                                <span class="pr-badge">W</span>
-                                <div class="pr-info"><b>Experience</b><small>Work history &amp; roles</small></div>
-                            </div>
-                            <div class="palette-row" draggable="true" data-type="education">
-                                <span class="pr-badge">E</span>
-                                <div class="pr-info"><b>Education</b><small>Degrees &amp; institutions</small></div>
-                            </div>
-                            <div class="palette-row" draggable="true" data-type="skills">
-                                <span class="pr-badge">K</span>
-                                <div class="pr-info"><b>Skills</b><small>Technical &amp; soft skills</small></div>
-                            </div>
-                            <div class="palette-row" draggable="true" data-type="projects">
-                                <span class="pr-badge">P</span>
-                                <div class="pr-info"><b>Projects</b><small>Portfolio &amp; side work</small></div>
-                            </div>
-                            <div class="palette-row" draggable="true" data-type="certifications">
-                                <span class="pr-badge">C</span>
-                                <div class="pr-info"><b>Certifications</b><small>Awards &amp; certificates</small></div>
-                            </div>
-                            <div class="palette-row" draggable="true" data-type="languages">
-                                <span class="pr-badge">L</span>
-                                <div class="pr-info"><b>Languages</b><small>Language proficiency</small></div>
-                            </div>
+                        <div class="section-palette" id="section-palette" aria-label="Available resume sections">
+                            <div class="palette-row" draggable="true" data-type="header" tabindex="0" role="button" aria-label="Add Header section"><span class="pr-badge">H</span><div class="pr-info"><b>Header</b><small>Name, title &amp; contact</small></div></div>
+                            <div class="palette-row" draggable="true" data-type="summary" tabindex="0" role="button" aria-label="Add Summary section"><span class="pr-badge">S</span><div class="pr-info"><b>Summary</b><small>Professional overview</small></div></div>
+                            <div class="palette-row" draggable="true" data-type="experience" tabindex="0" role="button" aria-label="Add Experience section"><span class="pr-badge">W</span><div class="pr-info"><b>Experience</b><small>Work history &amp; roles</small></div></div>
+                            <div class="palette-row" draggable="true" data-type="education" tabindex="0" role="button" aria-label="Add Education section"><span class="pr-badge">E</span><div class="pr-info"><b>Education</b><small>Degrees &amp; institutions</small></div></div>
+                            <div class="palette-row" draggable="true" data-type="skills" tabindex="0" role="button" aria-label="Add Skills section"><span class="pr-badge">K</span><div class="pr-info"><b>Skills</b><small>Technical &amp; soft skills</small></div></div>
+                            <div class="palette-row" draggable="true" data-type="projects" tabindex="0" role="button" aria-label="Add Projects section"><span class="pr-badge">P</span><div class="pr-info"><b>Projects</b><small>Portfolio &amp; side work</small></div></div>
+                            <div class="palette-row" draggable="true" data-type="certifications" tabindex="0" role="button" aria-label="Add Certifications section"><span class="pr-badge">C</span><div class="pr-info"><b>Certifications</b><small>Awards &amp; certificates</small></div></div>
+                            <div class="palette-row" draggable="true" data-type="languages" tabindex="0" role="button" aria-label="Add Languages section"><span class="pr-badge">L</span><div class="pr-info"><b>Languages</b><small>Language proficiency</small></div></div>
                         </div>
                     </div>
 
                     <div class="sb-group">
                         <div class="sb-group-title">Accent Color</div>
-                        <div class="color-swatch-row">
-                            <button class="color-swatch active" data-color="slate"  style="background:#1e293b" title="Slate"></button>
-                            <button class="color-swatch"        data-color="blue"   style="background:#1d4ed8" title="Blue"></button>
-                            <button class="color-swatch"        data-color="teal"   style="background:#0f766e" title="Teal"></button>
-                            <button class="color-swatch"        data-color="rose"   style="background:#be123c" title="Rose"></button>
-                            <button class="color-swatch"        data-color="violet" style="background:#6d28d9" title="Violet"></button>
-                            <button class="color-swatch"        data-color="amber"  style="background:#92400e" title="Amber"></button>
+                        <div class="color-swatch-row" aria-label="Accent color">
+                            <button class="color-swatch active" data-color="slate" style="background:#1e293b" type="button" aria-label="Select Slate accent color" aria-pressed="true"></button>
+                            <button class="color-swatch" data-color="blue" style="background:#1d4ed8" type="button" aria-label="Select Blue accent color" aria-pressed="false"></button>
+                            <button class="color-swatch" data-color="teal" style="background:#0f766e" type="button" aria-label="Select Teal accent color" aria-pressed="false"></button>
+                            <button class="color-swatch" data-color="rose" style="background:#be123c" type="button" aria-label="Select Rose accent color" aria-pressed="false"></button>
+                            <button class="color-swatch" data-color="violet" style="background:#6d28d9" type="button" aria-label="Select Violet accent color" aria-pressed="false"></button>
+                            <button class="color-swatch" data-color="amber" style="background:#92400e" type="button" aria-label="Select Amber accent color" aria-pressed="false"></button>
                         </div>
                     </div>
 
                     <div class="sb-group">
-                        <div class="sb-group-title">Font Family</div>
+                        <label class="sb-group-title" for="font-sel">Font Family</label>
                         <select class="sb-select" id="font-sel">
                             <option value="Inter">Inter — Modern &amp; Clean</option>
                             <option value="Outfit">Outfit — Geometric &amp; Fresh</option>
@@ -120,24 +85,24 @@
 
                     <div class="sb-group">
                         <div class="sb-group-title">Font Size</div>
-                        <div class="size-row">
-                            <button class="size-btn" data-fs="small">Small</button>
-                            <button class="size-btn active" data-fs="medium">Medium</button>
-                            <button class="size-btn" data-fs="large">Large</button>
+                        <div class="size-row" aria-label="Font size">
+                            <button class="size-btn" data-fs="small" type="button" aria-pressed="false">Small</button>
+                            <button class="size-btn active" data-fs="medium" type="button" aria-pressed="true">Medium</button>
+                            <button class="size-btn" data-fs="large" type="button" aria-pressed="false">Large</button>
                         </div>
                     </div>
 
                     <div class="sb-group">
-                        <div class="sb-group-title">Line Spacing &nbsp;<span class="spacing-val" id="spacing-val">1.5×</span></div>
-                        <input type="range" class="sb-range" id="spacing-range" min="1.1" max="2.2" step="0.1" value="1.5">
+                        <label class="sb-group-title" for="spacing-range">Line Spacing <span class="spacing-val" id="spacing-val">1.5×</span></label>
+                        <input type="range" class="sb-range" id="spacing-range" min="1.1" max="2.2" step="0.1" value="1.5" aria-describedby="spacing-val">
                     </div>
 
                 </div>
             </aside>
 
-            <main class="canvas-area" id="canvas-area">
+            <main class="canvas-area" id="canvas-area" aria-label="Resume editor">
                 <div class="canvas-scroll">
-                    <div class="resume-paper" id="resume-paper" data-template="modern">
+                    <div class="resume-paper" id="resume-paper" data-template="modern" aria-label="Resume preview and editor">
                         <div class="paper-empty" id="paper-empty">
                             <div class="pe-title">Build Your Resume</div>
                             <div class="pe-body">Drag sections from the left panel onto this canvas to get started</div>
@@ -149,7 +114,7 @@
         </div>
     </div>
 
-    <div class="toast-rail" id="toast-rail"></div>
+    <div class="toast-rail" id="toast-rail" role="status" aria-live="polite" aria-atomic="true"></div>
 
     <script src="script.js"></script>
 </body>

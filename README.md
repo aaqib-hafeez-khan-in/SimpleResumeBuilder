@@ -2,7 +2,7 @@
 
 A feature-rich, browser-based resume builder with drag-and-drop layout construction, live inline editing, multiple design templates, and instant PDF export. No backend, no build step, no dependencies — it runs entirely in the browser.
 
-Live at: https://aaqibhafeezkhan.github.io/SimpleResumeBuilder/
+Live at: https://aaqib-hafeez-khan-in.github.io/SimpleResumeBuilder/
 
 ## Features
 
@@ -58,7 +58,7 @@ All eight section types support inline editing by clicking directly on any text 
 Clone the repository and open `index.html` in any modern browser. No installation or build step is required.
 
 ```
-git clone https://github.com/AaqibhafeezKhan/SimpleResumeBuilder.git
+git clone https://github.com/aaqib-hafeez-khan-in/SimpleResumeBuilder.git
 cd SimpleResumeBuilder
 open index.html
 ```
